@@ -4,6 +4,12 @@
   <img src="assets/banner.svg" alt="Banner" width="100%" />
 </div>
 
+<div align="center" id="badges">
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+</div>
+
+<!-- SEO Keywords: Weight Sharing, Parameter Sharing, Weight Tying, FSDP, Artificial Intelligence, Neural Networks, Deep Learning, PyTorch, Model Compression, DeepSeek -->
+
 ## 🚀 Weight Sharing in AI: History, Progression, Variants, & Applications
 
 **Weight Sharing**—alternatively designated as parameter sharing, weight tying, or structural parameter reuse—is a foundational architectural paradigm in artificial intelligence that forces multiple distinct computational connections or layers inside a neural network to share identical, synchronized parameter values ($w$). In traditional fully connected neural networks, every individual synapse across the network architecture possesses its own unique, independent learnable parameter, causing total capacity limits to swell aggressively relative to the raw input scale. 
