@@ -13,7 +13,8 @@ The implementation of parameter reuse has transitioned from hand-crafted biomime
 
 
 ```mermaid
-[Local Spatial Reuse (Neocognitron, 1980)] ──> [Autoregressive Embedding Tying (2016)] ──> [Distributed Parameter Sharding (FSDP, 2023)] ──> [Low-Rank Latent Matrices (MLA, Present)](Hardwired Visual Shift Invariance)            (Symmetric Input-Output Token Space)          (Dynamic Multi-Node Weight Streaming)           (Fused Register Cache De-allocation)
+flowchart LR
+    A["Local Spatial Reuse (Neocognitron, 1980)<br>(Hardwired Visual Shift Invariance)"] --> B["Autoregressive Embedding Tying (2016)<br>(Symmetric Input-Output Token Space)"] --> C["Distributed Parameter Sharding (FSDP, 2023)<br>(Dynamic Multi-Node Weight Streaming)"] --> D["Low-Rank Latent Matrices (MLA, Present)<br>(Fused Register Cache De-allocation)"]
 ```
 
 *   **The Hardwired Spatial Receptive Field Era (Neocognitron / LeNet CNNs, 1980–2012)**
@@ -57,7 +58,15 @@ Weight Sharing methodologies are strictly categorized based on the exact dimensi
 To stream and reuse shared parameter blocks across disjointed hardware nodes without triggering cluster-wide stalls, the runtime engine intercepts execution pipelines using vectorized communication loops [INDEX: 22].
 
 ```mermaid
-FSDP Shared Layer-Block Forward Pass[Input Data Shard] ───> [All-Gather Shared Layer Parameter Weights] ───> [Compute Layer Forward Pass Math]│▼[Update Local Optimizer Slice] <─── [Reduce-Scatter Local Gradients] <─── [Evict Parameter Weights from VRAM]
+flowchart TB
+    subgraph fsdp ["FSDP Shared Layer-Block Forward Pass"]
+        direction TB
+        A["Input Data Shard"] --> B["All-Gather Shared Layer Parameter Weights"]
+        B --> C["Compute Layer Forward Pass Math"]
+        C --> D["Evict Parameter Weights from VRAM"]
+        D --> E["Reduce-Scatter Local Gradients"]
+        E --> F["Update Local Optimizer Slice"]
+    end
 ```
 
 
