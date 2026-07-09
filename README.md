@@ -1,5 +1,10 @@
-# Awesome-Weight-Sharing
-## Weight Sharing in AI: History, Progression, Variants, & Applications
+# 🌟 Awesome-Weight-Sharing
+
+<div align="center">
+  <img src="assets/banner.svg" alt="Banner" width="100%" />
+</div>
+
+## 🚀 Weight Sharing in AI: History, Progression, Variants, & Applications
 
 **Weight Sharing**—alternatively designated as parameter sharing, weight tying, or structural parameter reuse—is a foundational architectural paradigm in artificial intelligence that forces multiple distinct computational connections or layers inside a neural network to share identical, synchronized parameter values ($w$). In traditional fully connected neural networks, every individual synapse across the network architecture possesses its own unique, independent learnable parameter, causing total capacity limits to swell aggressively relative to the raw input scale. 
 
@@ -7,7 +12,7 @@ Weight sharing breaks this exponential memory inflation. By hardwiring parameter
 
 ---
 
-## 1. The Macro Chronological Evolution
+## 🕰️ 1. The Macro Chronological Evolution
 
 The implementation of parameter reuse has transitioned from hand-crafted biomimetic grids to autoregressive vocabulary constraints, distributed memory sharding, and hardware-fused low-rank latent workspaces.
 
@@ -32,7 +37,7 @@ flowchart LR
 
 ---
 
-## 2. Core Functional & Algorithmic Variants
+## ⚙️ 2. Core Functional & Algorithmic Variants
 
 Weight Sharing methodologies are strictly categorized based on the exact dimensional axes and operational loops where the parameter constraints are enforced.
 
@@ -53,7 +58,7 @@ Weight Sharing methodologies are strictly categorized based on the exact dimensi
 
 ---
 
-## 3. The Distributed FSDP Weight-Sharing Pipeline
+## 🌐 3. The Distributed FSDP Weight-Sharing Pipeline
 
 To stream and reuse shared parameter blocks across disjointed hardware nodes without triggering cluster-wide stalls, the runtime engine intercepts execution pipelines using vectorized communication loops [INDEX: 22].
 
@@ -77,7 +82,7 @@ flowchart TB
 
 ---
 
-## 4. Production Engineering Challenges & Cluster Solutions
+## 🛠️ 4. Production Engineering Challenges & Cluster Solutions
 
 Deploying complex weight-sharing and parameter-tying matrices across global enterprise infrastructure architectures introduces critical memory bus and optimization constraints [INDEX: 22].
 
@@ -88,7 +93,7 @@ Deploying complex weight-sharing and parameter-tying matrices across global ente
 
 ---
 
-## 5. Frontier Real-World AI Industrial Applications
+## 🏭 5. Frontier Real-World AI Industrial Applications
 
 | Application | Description | Year First Used | Paper Link |
 | :--- | :--- | :--- | :--- |
@@ -98,7 +103,7 @@ Deploying complex weight-sharing and parameter-tying matrices across global ente
 
 ---
 
-## References
+## 📚 References
 1. Press, O., & Wolf, L. (2016). Using the output embedding to improve language models. *arXiv preprint arXiv:1608.05859* [INDEX: 1].
 2. Vaswani, A., et al. (2017). Attention is all you need: Foundational transformer parameter matrix blocks. *Advances in Neural Information Processing Systems (NeurIPS)*, 30 [INDEX: 1].
 3. Rajbhandari, S., et al. (2020). ZeRO: Memory optimizations toward training trillion parameter models via sharded parameter reduction loops. *Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis* [INDEX: 22].
